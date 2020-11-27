@@ -21,7 +21,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/users")
-    public ResponseEntity<List<UserDTO>> getAll(){
+    public ResponseEntity<List<UserDTO>> getAll() {
         try {
             return ResponseEntity.ok(userService.findAll());
 
@@ -33,7 +33,7 @@ public class UserController {
     }
 
     @GetMapping("/user")
-    public ResponseEntity<UserDTO> get(@RequestParam String login){
+    public ResponseEntity<UserDTO> get(@RequestParam String login) {
         try {
             return ResponseEntity.ok(userService.findById(login));
 
@@ -45,7 +45,7 @@ public class UserController {
     }
 
     @DeleteMapping("/user")
-    public ResponseEntity<ApiResponse> delete(@RequestParam String login){
+    public ResponseEntity<ApiResponse> delete(@RequestParam String login) {
         try {
             userService.deleteById(login);
 
